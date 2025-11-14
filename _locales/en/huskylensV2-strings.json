@@ -184,7 +184,7 @@
   "huskylensV2.Algorithm.ALGORITHM_COLOR_RECOGNITION|block": "Color recognition",
   "huskylensV2.Algorithm.ALGORITHM_TAG_RECOGNITION|block": "Tag recognition",
   "huskylensV2.Algorithm.ALGORITHM_SELF_LEARNING_CLASSIFICATION|block": "Self-learning classification",
-  "huskylensV2.Algorithm.ALGORITHM_OCR_RECOGNITION|block": "OCR recognition",
+  "huskylensV2.Algorithm.ALGORITHM_OCR_RECOGNITION|block": "Optical Character Recognition",
   "huskylensV2.Algorithm.ALGORITHM_LICENSE_RECOGNITION|block": "License plate recognition",
   "huskylensV2.Algorithm.ALGORITHM_QRCODE_RECOGNITION|block": "QR code recognition",
   "huskylensV2.Algorithm.ALGORITHM_BARCODE_RECOGNITION|block": "Barcode recognition",
