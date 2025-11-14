@@ -1007,61 +1007,50 @@ namespace huskylensV2 {
 
     // Algorithm selection enum
     export enum Algorithm {
-        //% block="Any"
         ALGORITHM_ANY = 0,                      // 0
         //% block="Face recognition"
         ALGORITHM_FACE_RECOGNITION = 1,         // 1
-        //% block="Object tracking"
-        ALGORITHM_OBJECT_TRACKING,              // 2
         //% block="Object recognition"
-        ALGORITHM_OBJECT_RECOGNITION,           // 3
-        //% block="Line tracking"
-        ALGORITHM_LINE_TRACKING,                // 6
+        ALGORITHM_OBJECT_RECOGNITION = 3,       // 3
+        //% block="Object tracking"
+        ALGORITHM_OBJECT_TRACKING = 2,          // 2
         //% block="Color recognition"
-        ALGORITHM_COLOR_RECOGNITION,            // 5
-        //% block="Tag recognition"
-        ALGORITHM_TAG_RECOGNITION,              // 6
-        //% block="Self-learning classification"
-        ALGORITHM_SELF_LEARNING_CLASSIFICATION, // 7
-        //% block="OCR recognition"
-        ALGORITHM_OCR_RECOGNITION,              // 8
-        //% block="License plate recognition"
-        ALGORITHM_LICENSE_RECOGNITION,          // 9
-        //% block="QR code recognition"
-        ALGORITHM_QRCODE_RECOGNITION,           // 10
-        //% block="Barcode recognition"
-        ALGORITHM_BARCODE_RECOGNITION,          // 11
-        //% block="Emotion recognition"
-        ALGORITHM_EMOTION_RECOGNITION,          // 12
-        //% block="Pose recognition"
-        ALGORITHM_POSE_RECOGNITION,             // 13
-        //% block="Hand recognition"
-        ALGORITHM_HAND_RECOGNITION,             // 14
+        ALGORITHM_COLOR_RECOGNITION = 5,        // 5
         //% block="Object classification"
-        ALGORITHM_OBJECT_CLASSIFICATION,        // 15
-        //% block="Blink recognition"
-        ALGORITHM_BLINK_RECOGNITION,            // 16
-        //% block="Gaze recognition"
-        ALGORITHM_GAZE_RECOGNITION,             // 17
-        //% block="Face orientation"
-        ALGORITHM_FACE_ORIENTATION,             // 18
-        //% block="Fall-down recognition"
-        ALGORITHM_FALLDOWN_RECOGNITION,         // 19
-        //% block="Segmentation"
-        ALGORITHM_SEGMENT,                      // 20
-        //% block="Face action recognition"
-        ALGORITHM_FACE_ACTION_RECOGNITION,      // 21
-        //% block="Custom 0"
-        ALGORITHM_CUSTOM0,                      // 22
-        //% block="Custom 1"
-        ALGORITHM_CUSTOM1,                      // 23
-        //% block="Custom 2"
-        ALGORITHM_CUSTOM2,                      // 24
-        //% block="Builtin count"
-        ALGORITHM_BUILTIN_COUNT,                // 25
+        ALGORITHM_OBJECT_CLASSIFICATION = 15,   // 15
+        //% block="Self-learning classification"
+        ALGORITHM_SELF_LEARNING_CLASSIFICATION = 7, // 7
+        //% block="Instance Segmentation"
+        ALGORITHM_SEGMENT = 20,                 // 20
+        //% block="Hand recognition"
+        ALGORITHM_HAND_RECOGNITION = 14,        // 14
+        //% block="Pose recognition"
+        ALGORITHM_POSE_RECOGNITION = 13,        // 13
+        //% block="License plate recognition"
+        ALGORITHM_LICENSE_RECOGNITION = 9,      // 9
+        //% block="OCR recognition"
+        ALGORITHM_OCR_RECOGNITION = 8,          // 8
+        //% block="Line tracking"
+        ALGORITHM_LINE_TRACKING = 4,            // 4
+        //% block="Emotion recognition"
+        ALGORITHM_EMOTION_RECOGNITION = 12,     // 12
+        //% block="Tag recognition"
+        ALGORITHM_TAG_RECOGNITION = 6,          // 6
+        //% block="QR code recognition"
+        ALGORITHM_QRCODE_RECOGNITION = 10,      // 10
+        //% block="Barcode recognition"
+        ALGORITHM_BARCODE_RECOGNITION = 11,     // 11
+        ALGORITHM_BLINK_RECOGNITION = 16,       // 16
+        ALGORITHM_GAZE_RECOGNITION = 17,        // 17
+        ALGORITHM_FACE_ORIENTATION = 18,        // 18
+        ALGORITHM_FALLDOWN_RECOGNITION = 19,    // 19
+        ALGORITHM_FACE_ACTION_RECOGNITION = 21, // 21
+        ALGORITHM_CUSTOM0 = 22,                 // 22
+        ALGORITHM_CUSTOM1 = 23,                 // 23
+        ALGORITHM_CUSTOM2 = 24,                 // 24
+        ALGORITHM_BUILTIN_COUNT = 25,           // 25
         
-        //% block="Custom begin"
-        ALGORITHM_CUSTOM_BEGIN = 128, // 128
+        ALGORITHM_CUSTOM_BEGIN = 128,           // 128
     }
 
     // Face properties (with ID)
