@@ -1704,7 +1704,7 @@ namespace huskylensV2 {
         if (!result) return 0;
         const res = result as Result;
         switch (prop) {
-            case ObjectClassificationProperty.ID: return res.ID;
+            case ObjectClassificationProperty.ID: return res.classID;
             case ObjectClassificationProperty.Name: return res.name.length > 0 ? res.name : "";
             default: return 0;
         }
