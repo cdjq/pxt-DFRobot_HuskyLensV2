@@ -1726,13 +1726,22 @@ namespace huskylensV2 {
         return availableInternal(ALGORITHM_OBJECT_CLASSIFICATION);
     }
 
-    /** Property of classified object */
-    //% block="classified object %alg"
+    /** Property of Nth classified object */
+    //% block="classified object %num %alg"
     //% weight=163
+    //% num.min=1 num.defl=1
     //% group="Object Classification"
-    export function getCachedObjectClassificationResult(alg: ObjectClassificationProperty): any {
-        const r = getCachedCenterResultInternal(ALGORITHM_OBJECT_CLASSIFICATION);
+    export function getCachedObjectClassificationResult(num: number, alg: ObjectClassificationProperty): any {
+        const r = getCachedResultByIndexInternal(ALGORITHM_OBJECT_CLASSIFICATION, num - 1);
         return getObjectClassificationPropertyValue(r, alg);
+    }
+
+    /** Total number of detected classified objects */
+    //% block="number of detected classified objects"
+    //% weight=162
+    //% group="Object Classification"
+    export function getCachedResultNumObjectClassification(): number {
+        return getCachedResultNumInternal(ALGORITHM_OBJECT_CLASSIFICATION);
     }
 
     // ================= Self-Learning Classification =================
