@@ -190,7 +190,7 @@
   "huskylensV2.Algorithm.ALGORITHM_BARCODE_RECOGNITION|block": "條形碼識別",
   "huskylensV2.Algorithm.ALGORITHM_EMOTION_RECOGNITION|block": "表情識別",
   "huskylensV2.Algorithm.ALGORITHM_POSE_RECOGNITION|block": "姿態識別",
-  "huskylensV2.Algorithm.ALGORITHM_HAND_RECOGNITION|block": "手部識別",
+  "huskylensV2.Algorithm.ALGORITHM_HAND_RECOGNITION|block": "手勢識別",
   "huskylensV2.Algorithm.ALGORITHM_OBJECT_CLASSIFICATION|block": "物體分類",
   "huskylensV2.Algorithm.ALGORITHM_BLINK_RECOGNITION|block": "眨眼識別",
   "huskylensV2.Algorithm.ALGORITHM_GAZE_RECOGNITION|block": "視線識別",
