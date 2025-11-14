@@ -2881,16 +2881,16 @@ namespace huskylensV2 {
         getResultInternal(ALGORITHM_OCR_RECOGNITION);
     }
 
-    /** 是否检测到文字 */
-    //% block="Whether text detected"
+    /** 是否检测到文字区域 */
+    //% block="Whether text region detected"
     //% weight=118
     //% group="Optical Char Recognition"
     export function availableTextRecogtion(): boolean {
         return availableInternal(ALGORITHM_OCR_RECOGNITION);
     }
 
-    /** 靠近中心的文字属性 */
-    //% block="Text near center %alg"
+    /** 靠近中心的文字区域属性 */
+    //% block="Text region near center %alg"
     //% weight=117
     //% group="Optical Char Recognition"
     export function getCachedCenterTextResult(alg: TextProperty): any {
@@ -2898,34 +2898,16 @@ namespace huskylensV2 {
         return getTextPropertyValue(r, alg);
     }
 
-    /** 检测到的文字总数 */
-    //% block="Number of detected texts"
-    //% weight=116
-    //% group="Optical Char Recognition"
-    export function getCachedResultNumText(): number {
-        return getCachedResultNumInternal(ALGORITHM_OCR_RECOGNITION);
-    }
-
-    /** 第N个文字区域的属性 */
-    //% block="Text %index %alg"
-    //% weight=115
-    //% index.min=1 index.defl=1
-    //% group="Optical Char Recognition"
-    export function getCachedResultTextProperty(index: number, alg: TextProperty): any {
-        const r = getCachedResultByIndexInternal(ALGORITHM_OCR_RECOGNITION, index - 1);
-        return getTextPropertyValue(r, alg);
-    }
-
-    /** 已学习的文字ID总数 */
-    //% block="Number of learned text IDs"
+    /** 已学习的文字区域ID总数 */
+    //% block="Number of learned text region IDs"
     //% weight=114
     //% group="Optical Char Recognition"
     export function getNumLearnedTextIDs(): number {
         return getCachedResultLearnedNumInternal(ALGORITHM_OCR_RECOGNITION);
     }
 
-    /** 指定ID的文字是否存在 */
-    //% block="Does text ID %index exist?"
+    /** 指定ID的文字区域是否存在 */
+    //% block="Does text region ID %index exist?"
     //% weight=113
     //% index.min=1 index.defl=1
     //% group="Optical Char Recognition"
@@ -2934,33 +2916,13 @@ namespace huskylensV2 {
         return r != null;
     }
 
-    /** 指定ID的文字数量 */
-    //% block="Number of texts with ID %index"
-    //% weight=112
-    //% index.min=1 index.defl=1
-    //% group="Optical Char Recognition"
-    export function getNumTextByID(index: number): number {
-        return getCachedResultNumByIDInternal(ALGORITHM_OCR_RECOGNITION, index);
-    }
-
-    /** 指定ID的文字属性 */
-    //% block="Text ID %index %alg"
+    /** 指定ID的文字区域属性 */
+    //% block="Text region ID %index %alg"
     //% weight=111
     //% index.min=1 index.defl=1
     //% group="Optical Char Recognition"
     export function getTextPropertyByID(index: number, alg: TextPropertyID): any {
         const r = getCachedResultByIDInternal(ALGORITHM_OCR_RECOGNITION, index);
-        return getTextPropertyValueID(r, alg);
-    }
-
-    /** 指定ID第N个文字的属性 */
-    //% block="Text ID %id No.%n %alg"
-    //% weight=110
-    //% id.min=1 id.defl=1
-    //% n.min=1 n.defl=1
-    //% group="Optical Char Recognition"
-    export function getTextPropertyByIDNth(id: number, n: number, alg: TextPropertyID): any {
-        const r = getCachedIndexResultByIDInternal(ALGORITHM_OCR_RECOGNITION, id, n - 1);
         return getTextPropertyValueID(r, alg);
     }
 
