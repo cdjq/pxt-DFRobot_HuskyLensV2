@@ -1712,23 +1712,30 @@ namespace huskylensV2 {
 
     /** Request one-time object classification data and store in result */
     //% block="get object classification result"
-    //% weight=165
+    //% weight=4
     //% group="Object Classification"
     export function getResultObjectClassification(): void {
         getResultInternal(ALGORITHM_OBJECT_CLASSIFICATION);
     }
-
     /** Whether classified object detected */
     //% block="classified object detected?"
-    //% weight=164
+    //% weight=3
     //% group="Object Classification"
     export function availableObjectClassification(): boolean {
         return availableInternal(ALGORITHM_OBJECT_CLASSIFICATION);
     }
 
+    /** Total number of detected classified objects */
+    //% block="number of detected classified objects"
+    //% weight=2
+    //% group="Object Classification"
+    export function getCachedResultNumObjectClassification(): number {
+        return getCachedResultNumInternal(ALGORITHM_OBJECT_CLASSIFICATION);
+    }
+
     /** Property of Nth classified object */
     //% block="classified object %num %alg"
-    //% weight=163
+    //% weight=1
     //% num.min=1 num.defl=1
     //% group="Object Classification"
     export function getCachedObjectClassificationResult(num: number, alg: ObjectClassificationProperty): any {
@@ -1736,13 +1743,7 @@ namespace huskylensV2 {
         return getObjectClassificationPropertyValue(r, alg);
     }
 
-    /** Total number of detected classified objects */
-    //% block="number of detected classified objects"
-    //% weight=162
-    //% group="Object Classification"
-    export function getCachedResultNumObjectClassification(): number {
-        return getCachedResultNumInternal(ALGORITHM_OBJECT_CLASSIFICATION);
-    }
+
 
     // ================= Self-Learning Classification =================
     // Self-learning classification properties (only ID and Name)
