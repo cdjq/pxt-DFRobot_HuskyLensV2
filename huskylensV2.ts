@@ -2938,13 +2938,19 @@ namespace huskylensV2 {
     }
 
     // ================= Line Tracking =================
+    // Helper function to convert unsigned 16-bit to signed 16-bit integer
+    function toSigned16(val: number): number {
+        // If value is greater than 32767, it's a negative number in signed 16-bit representation
+        return val > 32767 ? val - 65536 : val;
+    }
+    
     function getLineTrackingPropertyValue(result: ResultVariant, prop: LineTrackingProperty): number {
         if (!result) return 0;
         const res = result as Result;
         switch (prop) {
-            case LineTrackingProperty.XComponent: return res.xCenter;
-            case LineTrackingProperty.YComponent: return res.yCenter;
-            case LineTrackingProperty.Angle: return res.angle;
+            case LineTrackingProperty.XComponent: return toSigned16(res.xCenter);
+            case LineTrackingProperty.YComponent: return toSigned16(res.yCenter);
+            case LineTrackingProperty.Angle: return toSigned16(res.angle);
             case LineTrackingProperty.Length: return res.length;
             default: return 0;
         }
