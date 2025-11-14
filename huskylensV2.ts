@@ -1890,13 +1890,13 @@ namespace huskylensV2 {
     }
 
     // ================= Hand Recognition =================
-    function getGesturePropertyValue(result: ResultVariant, prop: GestureProperty): number {
+    function getGesturePropertyValue(result: ResultVariant, prop: GestureProperty): any {
         if (!result) return 0;
         if (result instanceof HandResult) {
             const hr = result as HandResult;
             switch (prop) {
                 case GestureProperty.ID: return hr.ID;
-                case GestureProperty.Name: return hr.name.length > 0 ? 1 : 0;
+                case GestureProperty.Name: return hr.name.length > 0 ? hr.name : "";
                 case GestureProperty.XCenter: return hr.xCenter;
                 case GestureProperty.YCenter: return hr.yCenter;
                 case GestureProperty.Width: return hr.width;
@@ -1947,12 +1947,12 @@ namespace huskylensV2 {
         return getObjectPropertyValue(result, prop as any);
     }
 
-    function getGesturePropertyValueID(result: ResultVariant, prop: GesturePropertyID): number {
+    function getGesturePropertyValueID(result: ResultVariant, prop: GesturePropertyID): any {
         if (!result) return 0;
         if (result instanceof HandResult) {
             const hr = result as HandResult;
             switch (prop) {
-                case GesturePropertyID.Name: return hr.name.length > 0 ? 1 : 0;
+                case GesturePropertyID.Name: return hr.name.length > 0 ? hr.name : "";
                 case GesturePropertyID.XCenter: return hr.xCenter;
                 case GesturePropertyID.YCenter: return hr.yCenter;
                 case GesturePropertyID.Width: return hr.width;
@@ -2222,7 +2222,7 @@ namespace huskylensV2 {
     //% block="gesture nearest to center %alg"
     //% weight=147
     //% group="Hand Recognition"
-    export function getCachedCenterGestureResult(alg: GestureProperty): number {
+    export function getCachedCenterGestureResult(alg: GestureProperty): any {
         const r = getCachedCenterResultInternal(ALGORITHM_HAND_RECOGNITION);
         return getGesturePropertyValue(r, alg);
     }
@@ -2240,7 +2240,7 @@ namespace huskylensV2 {
     //% weight=145
     //% index.min=1 index.defl=1
     //% group="Hand Recognition"
-    export function getCachedResultGestureProperty(index: number, alg: GestureProperty): number {
+    export function getCachedResultGestureProperty(index: number, alg: GestureProperty): any {
         const r = getCachedResultByIndexInternal(ALGORITHM_HAND_RECOGNITION, index - 1);
         return getGesturePropertyValue(r, alg);
     }
@@ -2277,7 +2277,7 @@ namespace huskylensV2 {
     //% weight=141
     //% index.min=1 index.defl=1
     //% group="Hand Recognition"
-    export function getGesturePropertyByID(index: number, alg: GesturePropertyID): number {
+    export function getGesturePropertyByID(index: number, alg: GesturePropertyID): any {
         const r = getCachedResultByIDInternal(ALGORITHM_HAND_RECOGNITION, index);
         return getGesturePropertyValueID(r, alg);
     }
@@ -2288,7 +2288,7 @@ namespace huskylensV2 {
     //% id.min=1 id.defl=1
     //% n.min=1 n.defl=1
     //% group="Hand Recognition"
-    export function getGesturePropertyByIDNth(id: number, n: number, alg: GesturePropertyID): number {
+    export function getGesturePropertyByIDNth(id: number, n: number, alg: GesturePropertyID): any {
         const r = getCachedIndexResultByIDInternal(ALGORITHM_HAND_RECOGNITION, id, n - 1);
         return getGesturePropertyValueID(r, alg);
     }
